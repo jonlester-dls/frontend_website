@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Page</title>
+  <style>
+    /* Body styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Card container styling */
+    .container {
+      max-width: 400px;
+      width: 100%;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Header styling */
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    /* Form layout */
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Label styling */
+    label {
+      font-weight: bold;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    /* Input fields styling */
+    input[type="text"], 
+    input[type="email"], 
+    input[type="password"], 
+    input[type="file"] {
+      padding: 12px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #f9f9f9;
+      transition: all 0.3s ease;
+    }
+
+    /* Input hover and focus effects */
+    input[type="text"]:focus, 
+    input[type="email"]:focus, 
+    input[type="password"]:focus, 
+    input[type="file"]:focus {
+      outline: none;
+      border-color: #3ac2ba;
+      background: #fff;
+    }
+
+    /* Note styling for file upload */
+    .note {
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: -15px;
+      margin-bottom: 15px;
+    }
+
+    /* Button styling */
+    button {
+      padding: 12px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      background-color: #3ac2ba;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3ac2ba;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 500px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Register</h1>
+    <form id="registerForm">
+      <!-- First Name Field -->
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+  
+      <!-- Last Name Field -->
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+  
+      <!-- Email Field -->
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+  
+      <!-- Password Field -->
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Create a password" required>
+  
+      <!-- Resume Upload Field -->
+      <label for="resume">Upload Resume:</label>
+      <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+      <p class="note">Accepted file types: .pdf, .doc, .docx</p>
+  
+      <!-- Submit Button -->
+      <button type="button" id="submitButton">Register</button>
+    </form>
+  </div>
+  
+  <script>
+    document.getElementById("submitButton").addEventListener("click", function () {
+      const form = document.getElementById("registerForm");
+  
+      // Check if the form is valid
+      if (form.checkValidity()) {
+        // Redirect to the desired URL
+        window.location.href = "applicant.html";
+      } else {
+        // Highlight invalid fields if any
+        form.reportValidity();
+      }
+    });
+  </script>
+  
+</body>
+</html>

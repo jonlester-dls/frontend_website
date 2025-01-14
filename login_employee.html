@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles_login_employee.css">
+</head>
+<body>
+    <div class="container">
+        <div class="background">
+            <h1 class="portal-title">Essencia Medical Hospital</h1>
+            <p class="subtitle">Sign in to your account</p>
+        </div>
+        <div class="login-box">
+            <h2>Log In</h2>
+            <form id="registerForm">
+                <input type="text" placeholder="Username" name="username" required>
+                <input type="password" placeholder="Password" name="password" required>
+                <button type="button" id="submitButton">Register</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById("submitButton").addEventListener("click", function () {
+          const form = document.getElementById("registerForm");
+      
+          // Check if the form is valid
+          if (form.checkValidity()) {
+            // Redirect to the desired URL
+            window.location.href = "employee.html";
+          } else {
+            // Highlight invalid fields if any
+            form.reportValidity();
+          }
+        });
+      </script>
+</body>
+</html>
